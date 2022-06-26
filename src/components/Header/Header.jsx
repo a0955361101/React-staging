@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {nanoid} from 'nanoid'
 
 export default class Header extends Component {
+    // 對接收的props進行: 類型以及必要性的限制
+    static propTypes = {
+        addTodo:PropTypes.func.isRequired
+    }
 
+    // 鍵盤式件的函式
     handleKeyUp= (event)=>{
         // 解構賦值獲取keyCode,target
         const {keyCode,target} = event

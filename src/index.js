@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom/client';
 // 引入App組件
 import App from './App';
 
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+
 // 渲染App到頁面
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

@@ -7,6 +7,7 @@ import './App.css'
 
 
 class App extends Component{
+  // 狀態在哪裡 , 操作的方法就在哪裡
   // 初始化狀態
   state={todos:[
     {id:'001',name:'吃飯',done:true},
@@ -24,14 +25,64 @@ class App extends Component{
     //更新狀態
     this.setState({todos:newTodos})
   }
+
+  // changeTodo用於更新一個todo對象
+  changeTodo=(id,done)=>{
+    // 獲取狀態中的todos
+    const {todos} = this.state
+    // 匹配處理數據
+    const newTodos =  todos.map((todoObj) => {
+      if(todoObj.id === id) return {...todoObj,done}
+      else return todoObj
+    })
+    this.setState({todos:newTodos})
+  }
+
+  // deleteTodo用於刪除一個todo對象
+  deleteTodo = (id)=>{
+    // 獲取原來的todos
+    const {todos} = this.state
+    //刪除指定id的todo對象
+   const newTodos =  todos.filter((todoObj)=>{
+      return todoObj.id !== id
+    })
+    // 更新狀態
+    this.setState({todos:newTodos})
+  }
+
+  // checkAllTodo用於全選
+  checkAllTodo=(done)=>{
+    // 獲取原來的todos
+    const{todos}=this.state
+    // 加工數據
+    const nweTodos =  todos.map((todoObj)=>{
+      return {...todoObj,done}
+    })
+    //更新狀態
+    this.setState({todos:nweTodos})
+  }
+
+  //clearAllDone 用於清除所有已經完成的
+  clearAllDone=()=>{
+    // 獲取原來的todos
+    const {todos} = this.state
+       //過濾數據
+    const newTodos =  todos.filter((todoObj)=>{
+      return !todoObj.done 
+    })
+    //更新狀態
+    this.setState({todos:newTodos})
+  }
+
+
   render(){
     const {todos} = this.state
     return(
             <div className="todo-container">
                 <div className="todo-wrap">
                   <Header addTodo = {this.addTodo}/>
-                  <List todos={todos}/>
-                  <Footer/>
+                  <List todos={todos} changeTodo={this.changeTodo} deleteTodo={this.deleteTodo}/>
+                  <Footer todos={todos} checkAllTodo={this.checkAllTodo} clearAllDone={this.clearAllDone}/>
                 </div>
               </div> 
         
