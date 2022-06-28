@@ -7,15 +7,10 @@ import App from './App';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
-import  'axios';
-
-
-import './axios.js'
 // 渲染App到頁面
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-    
 <React.StrictMode>
     <App />
 </React.StrictMode>
