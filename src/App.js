@@ -2,6 +2,7 @@
 import React,{Component} from 'react';
 import About from './routes/About/About';
 import Home from './routes/Home/Home';
+import Header from './components/Header/Header';
 import {Link,BrowserRouter,Route} from 'react-router-dom'
 
 class App extends Component{
@@ -10,9 +11,9 @@ class App extends Component{
   
     return(
       <BrowserRouter>
-        <div className='row'>
+        <div className='row '>
           <div className='col-xs-offset-2 col-xs-8'>
-            <div className='page-header'><h2>React Router Demo</h2></div>
+            <Header/>
           </div>
           </div>
           <div className='row'>
@@ -40,8 +41,6 @@ class App extends Component{
             </div>
           </div>
         </div>
-     
-     
         </BrowserRouter>
     )
   }

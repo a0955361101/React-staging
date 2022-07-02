@@ -50,3 +50,30 @@ search =  async () =>{
     <Route path="/demo" component={Demo} />
 ``` 
     4.<App>的最外側包裹了一個<BrowerRouter>或<HashRouter>
+
+# 路由組件與一般組件
+    1.寫法不同:
+        一般組件: <Demo/>
+        路由組件: <Route path="/demo" component={Demo}/>
+    2.存放位子不同:
+        一般組件: components
+        路由組件: pages
+    3.接收到的props不同:
+        一般組件: 寫組件標籤時傳遞了什麼, 就能收到什麼
+        路由組件: 接收到三個固定的屬性
+```js
+        history:
+                go: ƒ go(n)
+                goBack: ƒ goBack()
+                goForward: ƒ goForward()
+                push: ƒ push(path, state)
+                replace: ƒ replace(path, state)
+        location:
+                pathname: "/about"
+                search: ""
+                state: undefined
+        match:
+                params: {}
+                path: "/about"
+                url: "/about"
+```
