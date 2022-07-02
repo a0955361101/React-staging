@@ -3,7 +3,8 @@ import React,{Component} from 'react';
 import About from './routes/About/About';
 import Home from './routes/Home/Home';
 import Header from './components/Header/Header';
-import {Link,BrowserRouter,Route} from 'react-router-dom'
+import {NavLink,BrowserRouter,Route} from 'react-router-dom'
+import './App.css'
 
 class App extends Component{
 
@@ -25,8 +26,8 @@ class App extends Component{
 
            {/* 在react中靠路由鏈接實現切換組件 */}
            
-           <Link className='list-group-item' to="/about">About</Link>
-           <Link className='list-group-item' to="/home">Home</Link>
+           <NavLink activeClassName="test" className='list-group-item' to="/about">About</NavLink>
+           <NavLink activeClassName="test" className='list-group-item' to="/home">Home</NavLink>
           
             </div>
           </div>
