@@ -4,8 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // 引入App組件
 import App from './App';
-import  '../node_modules/bootstrap/dist/css/bootstrap.css'
-import './App.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 
 
