@@ -37,5 +37,16 @@ search =  async () =>{
             PubSub.publish('states',{isLoading:false,err:error.message})
         }
     }
+```
 
-    
+# 路由的基本使用 筆記
+    1.明確好介面中的導航區、展示區
+    2.導航區的a標籤改為Link標籤
+```js
+    <Link to="/Demo">Demo</Link>
+```
+    3.展示區寫Route標籤進行路徑的匹配
+```js
+    <Route path="/demo" component={Demo} />
+``` 
+    4.<App>的最外側包裹了一個<BrowerRouter>或<HashRouter>
