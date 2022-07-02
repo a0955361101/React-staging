@@ -82,3 +82,7 @@ search =  async () =>{
     1.NavLink可以實現路由連接的高亮,通過activeClassName指定樣式名
     2.標籤體內容是一個特殊的標籤屬性
     3.通過this.props.children可以獲取標籤體內容
+
+# Switch的使用
+    1.通常情況下,path和component是一一對應的關係
+    2.Switch可以提高路由匹配的效率(單一匹配)
